@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <appender name="STD_OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- INFO日志 -->
+    <appender name="APPENDER_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/movecar-info.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/ns-info.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- DEBUG日志 -->
+    <appender name="APPENDER_DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/movecar-debug.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/ns-debug.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- WARN日志 -->
+    <appender name="APPENDER_WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/movecar-warn.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/ns-warn.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- ERROR日志 -->
+    <appender name="APPENDER_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/movecar-error.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/ns-error.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!-- loggers -->
+    <root level="DEBUG">
+        <appender-ref ref="STD_OUT" />
+        <appender-ref ref="APPENDER_INFO" />
+        <appender-ref ref="APPENDER_DEBUG" />
+        <appender-ref ref="APPENDER_WARN"/>
+        <appender-ref ref="APPENDER_ERROR"/>
+    </root>
+
+</configuration>
