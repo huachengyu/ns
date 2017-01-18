@@ -1,5 +1,6 @@
 package com.stock.web.interceptor;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,7 +23,7 @@ public class URLInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         String ip = request.getRemoteAddr();
-        if (whiteIp.contains(ip)) {
+        if (StringUtils.isNotBlank(whiteIp) && whiteIp.contains(ip)) {
             return true;
         }
         return false;

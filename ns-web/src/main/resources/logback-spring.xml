@@ -9,12 +9,12 @@
 
     <!-- INFO日志 -->
     <appender name="APPENDER_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/movecar-info.log</file>
+        <file>/home/ns/logs/ns-info.log</file>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/ns-info.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <fileNamePattern>/home/ns/logs/ns-info.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
@@ -24,12 +24,12 @@
 
     <!-- DEBUG日志 -->
     <appender name="APPENDER_DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/movecar-debug.log</file>
+        <file>/home/ns/logs/ns-debug.log</file>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>DEBUG</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/ns-debug.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <fileNamePattern>/home/ns/logs/ns-debug.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
@@ -39,12 +39,12 @@
 
     <!-- WARN日志 -->
     <appender name="APPENDER_WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/movecar-warn.log</file>
+        <file>/home/ns/logs/ns-warn.log</file>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>WARN</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/ns-warn.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <fileNamePattern>/home/ns/logs/ns-warn.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
@@ -54,12 +54,12 @@
 
     <!-- ERROR日志 -->
     <appender name="APPENDER_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/movecar-error.log</file>
+        <file>/home/ns/logs/ns-error.log</file>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>ERROR</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/ns-error.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <fileNamePattern>/home/ns/logs/ns-error.log.%d{yyyy-MM-dd}.zip</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <charset>UTF-8</charset>
