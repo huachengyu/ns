@@ -25,7 +25,6 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -76,7 +75,7 @@ public class PoolHttpsClientService {
      * @see [相关类/方法](可选)
      * @since [产品/模块版本](可选)
      */
-    static  {
+    static {
         SSLContextBuilder sslContextBuilder = new SSLContextBuilder();
         try {
             sslContextBuilder.loadTrustMaterial(null, new TrustSelfSignedStrategy());
@@ -169,7 +168,7 @@ public class PoolHttpsClientService {
      *
      * @param url 访问的网址
      */
-    public String getUrlContent(@NotNull String url, Map<String,Object> params) {
+    public String getUrlContent(@NotNull String url, Map<String, Object> params) {
         url = url + "?" + this.urlEncode(params);
         HttpGet httpGet = new HttpGet(url);
         CloseableHttpResponse response = null;
@@ -203,11 +202,11 @@ public class PoolHttpsClientService {
     }
 
     //将map型转为请求参数型
-    private String urlEncode(Map<String,Object> data) {
+    private String urlEncode(Map<String, Object> data) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry i : data.entrySet()) {
             try {
-                sb.append(i.getKey()).append("=").append(URLEncoder.encode(i.getValue()+"","UTF-8")).append("&");
+                sb.append(i.getKey()).append("=").append(URLEncoder.encode(i.getValue() + "", "UTF-8")).append("&");
             } catch (UnsupportedEncodingException e) {
                 log.error("UnsupportedEncodingException", e);
             }

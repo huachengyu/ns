@@ -71,9 +71,9 @@
 
     <!-- loggers -->
     <root level="DEBUG">
-        <appender-ref ref="STD_OUT" />
-        <appender-ref ref="APPENDER_INFO" />
-        <appender-ref ref="APPENDER_DEBUG" />
+        <appender-ref ref="STD_OUT"/>
+        <appender-ref ref="APPENDER_INFO"/>
+        <appender-ref ref="APPENDER_DEBUG"/>
         <appender-ref ref="APPENDER_WARN"/>
         <appender-ref ref="APPENDER_ERROR"/>
     </root>

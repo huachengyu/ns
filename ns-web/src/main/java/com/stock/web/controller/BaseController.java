@@ -25,7 +25,7 @@ public class BaseController {
         Map<String, String> fieldErrorMap = new HashMap<>();
         BindingResult result = ex.getBindingResult();
         List<FieldError> fieldErrors = result.getFieldErrors();
-        for (FieldError fieldError: fieldErrors) {
+        for (FieldError fieldError : fieldErrors) {
             fieldErrorMap.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
         return fieldErrorMap;

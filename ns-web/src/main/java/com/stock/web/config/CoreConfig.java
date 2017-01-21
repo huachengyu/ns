@@ -21,7 +21,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class CoreConfig extends WebMvcConfigurerAdapter {
 
     @Bean
-    public WebMvcConfigurerAdapter initAdapter(){
+    public WebMvcConfigurerAdapter initAdapter() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -44,9 +44,10 @@ public class CoreConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
-    public HandlerInterceptor getMyInterceptor(){
+    public HandlerInterceptor getMyInterceptor() {
         return new URLInterceptor();
     }
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 多个拦截器组成一个拦截器链
